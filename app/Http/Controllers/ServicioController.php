@@ -12,6 +12,6 @@ class ServicioController extends Controller
     }
     public function showservice(){
         $results = DB::select('select * from servicio');
-        return $results;
+        return dd($results);
     }
 }

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ServicioController;
+use App\Models\Servicio;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/vista',[ServicioController::class,'showservice']
+    ///*$resultados = Servicio::all();
+    ///return dd($resultados);
+);
