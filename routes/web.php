@@ -23,3 +23,4 @@ Route::post('servicio',[ServicioController::class,'saveservice'])->name('saveser
 Route::get('servicio/{servicio}',[ServicioController::class,'showservice'])->name('showservice');
 Route::get('servicio/{servicio}/edit',[ServicioController::class,'editservice'])->name('editservice');
 Route::put('servicio/{servicio}',[ServicioController::class,'updateservice'])->name('updateservice');
+Route::delete('servicio/{servicio}',[ServicioController::class,'deleteservice'])->name('deleteservice');

@@ -31,4 +31,8 @@ class ServicioController extends Controller
         $servicio->save();
         return redirect()->route('showservice',$servicio);
     }
+    public function deleteservice(Servicio $servicio){
+        $servicio->delete();
+        return redirect()->route('showservices');
+    }
 }
