@@ -17,7 +17,9 @@ use App\Models\Servicio;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/vista',[ServicioController::class,'showservice']
-    ///*$resultados = Servicio::all();
-    ///return dd($resultados);
-);
+Route::get('servicio',[ServicioController::class,'showservices'])->name('showservices');
+Route::get('servicio/create',[ServicioController::class,'createservice'])->name('createservice');
+Route::post('servicio',[ServicioController::class,'saveservice'])->name('saveservice');
+Route::get('servicio/{servicio}',[ServicioController::class,'showservice'])->name('showservice');
+Route::get('servicio/{servicio}/edit',[ServicioController::class,'editservice'])->name('editservice');
+Route::put('servicio/{servicio}',[ServicioController::class,'updateservice'])->name('updateservice');
