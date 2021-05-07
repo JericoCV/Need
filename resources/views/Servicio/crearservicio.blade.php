@@ -6,8 +6,13 @@
     @csrf
     <label>
         Servicio:
-        <input type="text" name="servicename">
+        <input type="text" name="servicename" value="{{old('servicename')}}">
     </label>
+    @error('servicename')
+    <br>
+        <small>*{{$message}}</small>
+    <br>
+    @enderror
     <button type="submit">GUARDAR</button>
 </form>
 @endsection

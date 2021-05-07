@@ -7,8 +7,13 @@
         @method('put')
         <label>
             Servicio:
-            <input type="text" name="servicename" value="{{$servicio->servicename}}">
+            <input type="text" name="servicename" value="{{old('servicename',$servicio->servicename)}}">
         </label>
+        @error('servicename')
+        <br>
+        <small>*{{$message}}</small>
+        <br>
+        @enderror
         <button type="submit">ACTUALIZAR</button>
     </form>
 @endsection

@@ -18,6 +18,7 @@ class ServicioController extends Controller
         return view("Servicio.mostrarservicio",compact('servicio'));
     }
     public  function saveservice(Request $request){
+        $request->validate(['servicename' => 'required']);
         $servicio = new Servicio();
         $servicio->servicename = $request->servicename;
         $servicio->save();
@@ -27,6 +28,7 @@ class ServicioController extends Controller
         return view("Servicio.editarservicio", compact('servicio'));
     }
     public function updateservice(Request $request,Servicio $servicio){
+        $request->validate(['servicename' => 'required']);
         $servicio->servicename = $request->servicename;
         $servicio->save();
         return redirect()->route('showservice',$servicio);
